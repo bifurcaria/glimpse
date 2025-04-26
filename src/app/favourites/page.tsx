@@ -41,7 +41,7 @@ export default function FavouritesPage() {
 
         {favourites.length === 0 ? (
           <div className="flex min-h-[50vh] flex-col items-center justify-center space-y-4 rounded-lg border border-dashed p-8 text-center">
-            <p className="text-lg text-gray-500">
+            <p className="text-lg text-stone-500">
               You have not saved any artworks yet.
             </p>
             <Button asChild>
@@ -67,7 +67,7 @@ export default function FavouritesPage() {
                   </div>
                 </Link>
 
-                <div className="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-stone/70 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <Button
                     variant="destructive"
                     size="icon"
@@ -81,9 +81,9 @@ export default function FavouritesPage() {
                     <DeleteIcon className="h-4 w-4" />
                   </Button>
 
-                  <div className="text-white">
+                  <div className="text-stone">
                     <h3 className="font-medium">{artwork.title}</h3>
-                    <p className="text-sm text-gray-200">{artwork.artist}</p>
+                    <p className="text-sm text-stone-200">{artwork.artist}</p>
                   </div>
                 </div>
               </div>

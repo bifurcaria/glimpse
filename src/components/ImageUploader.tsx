@@ -51,9 +51,9 @@ export function Upload() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-14">
         {preview ? (
-          <div className="relative aspect-square w-full max-w-xs overflow-hidden rounded-lg border border-gray-200">
+          <div className="relative aspect-square w-full max-w-xs overflow-hidden rounded-lg border border-stone-200">
             <Image
               src={preview || "/placeholder.svg"}
               alt="Artwork preview"
@@ -66,7 +66,7 @@ export function Upload() {
               type="button"
               variant="outline"
               size="sm"
-              className="absolute bottom-2 right-2 bg-white"
+              className="absolute bottom-2 right-2 bg-stone"
               onClick={() => {
                 setFile(null);
                 setPreview(null);
@@ -77,11 +77,11 @@ export function Upload() {
             </Button>
           </div>
         ) : (
-          <label className="flex aspect-square w-full max-w-xs cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-gray-300 p-6 text-center hover:bg-gray-50">
-            <CloudUploadIcon className="h-10 w-10 text-gray-400" />
+          <label className="flex aspect-square w-full max-w-xs cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-stone-300 p-6 text-center hover:bg-stone-900">
+            <CloudUploadIcon className="h-10 w-10 text-stone-400" />
             <div className="space-y-1">
               <p className="text-sm font-medium">upload artwork photo</p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-stone-500">
                 JPG, PNG or WEBP (max. 10MB)
               </p>
             </div>
@@ -95,21 +95,21 @@ export function Upload() {
         )}
 
         {errorMsg && <div className="text-red-500 text-sm">{errorMsg}</div>}
-
-        <Button
-          type="submit"
-          className="w-full max-w-xs"
-          disabled={!file || loading}
-        >
-          {loading ? (
-            <>
-              <LoopIcon className="mr-2 h-4 w-4 animate-spin" />
-              recognizing artwork...
-            </>
-          ) : (
-            "recognize artwork"
-          )}
-        </Button>
+        <div className="flex flex-col gap-2">
+          <Button variant="outline" className="w-full">
+            {loading ? (
+              <>
+                <LoopIcon className="mr-2 h-4 w-4 animate-spin" />
+                recognizing artwork...
+              </>
+            ) : (
+              "recognize artwork"
+            )}
+          </Button>
+          <Button type="submit" className="w-full max-w-xs">
+            <a href="/favourites">browse your collection</a>
+          </Button>
+        </div>
       </div>
     </form>
   );

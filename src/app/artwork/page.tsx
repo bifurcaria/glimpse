@@ -77,7 +77,7 @@ export default function ArtworkPage() {
         </Button>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg bg-gray-100">
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg bg-stone-950">
             <Image
               src={artwork.imageUrl || "/placeholder.svg"}
               width={600}
@@ -93,7 +93,7 @@ export default function ArtworkPage() {
               <h1 className="text-2xl font-bold md:text-3xl">
                 {artwork.title}
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-stone-600">
                 {artwork.artist}, {artwork.year}
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function ArtworkPage() {
             <div className="space-y-4">
               <div className="grid grid-cols-1 gap-4">
                 <div className="col-span-1">
-                  <p className="text-sm text-gray-500">Museum</p>
+                  <p className="text-sm text-stone-500">Museum</p>
                   <p>{artwork.museum}</p>
                 </div>
               </div>
