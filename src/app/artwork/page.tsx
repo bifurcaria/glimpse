@@ -76,8 +76,8 @@ export default function ArtworkPage() {
           Back
         </Button>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg bg-stone-950">
+        <div className="flex flex-col gap-10 md:flex-row items-start">
+          <div className="relative max-w-md aspect-auto w-full overflow-hidden rounded-lg bg-stone-950">
             <Image
               src={artwork.imageUrl || "/placeholder.svg"}
               width={600}
@@ -85,6 +85,7 @@ export default function ArtworkPage() {
               alt={artwork.title}
               className="object-cover"
               priority
+              unoptimized
             />
           </div>
 
