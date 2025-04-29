@@ -9,6 +9,7 @@ export interface ArtworkData {
   author: string; // Note: Called 'artist' in the UI, but 'author' in API
   year: string;
   museum: string; // Called 'location' in the UI
+  imageUrl: string;
   id?: string;
 }
 
@@ -46,7 +47,7 @@ export function useArtworkIdentifier() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ imageData: base64Data }),
+        body: JSON.stringify({ image: base64Data }),
       });
 
       console.log("Received response status:", response.status);
