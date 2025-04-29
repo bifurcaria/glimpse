@@ -31,9 +31,9 @@ export default function ArtworkPage() {
             id: id,
             title: apiData.title,
             artist: apiData.author, // Map author to artist
-            year: apiData.year,
-            museum: apiData.museum, // Map museum to location
-            imageUrl: "/IMG_1123.png", // Placeholder for now
+            year: apiData.year || "Unknown",
+            museum: apiData.museum || "Unknown", // Map museum to location
+            imageUrl: apiData.imageUrl || "/placeholder.svg", // Placeholder for now
           };
 
           setArtwork(uiData);
